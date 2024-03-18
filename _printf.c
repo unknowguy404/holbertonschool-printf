@@ -1,15 +1,15 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
 
 /*
  * Custom printf function that handles conversion specifiers %d and %i
  */
 int _printf(const char *format, ...)
 {
+	unsigned int count = 0;
 	va_list args;
 	va_start(args, format);
-
-	int count = 0;
 
 	while (*format)
 	{
