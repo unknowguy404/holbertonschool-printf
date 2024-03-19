@@ -1,4 +1,7 @@
 #include "main.h"
+/**
+ *
+ */
 
 int _printf(const char *format, ...)
 {
@@ -67,10 +70,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-
 				putchar('%');
-				putchar(*format);
-				count += 2;
+				count++;
 			}
 		}
 		else
