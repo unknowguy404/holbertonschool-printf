@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 			{
 				putchar('%');
+				count++;
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
@@ -48,6 +49,11 @@ int _printf(const char *format, ...)
 			{
 				unsigned int octal_num = va_arg(args, int);
 				count += printf("%o", octal_num);
+			}
+			else if (*format == 'p')
+			{
+				void *ptr = va_arg(args, void *);
+				count += printf("%p", ptr);
 			}
 			else if (*format == 'x' || *format == 'X')
 			{
