@@ -47,20 +47,6 @@ int _printf(const char *format, ...)
 				unsigned int hex_num = va_arg(args, int);
 				count += printf("%x", hex_num);
 			}
-			else if (*format == 'p')
-			{
-				void *ptr = va_arg(args, void *);
-				count += printf("%p", ptr);
-			}
-			else if (*format == 'u')
-			{
-				unsigned int num = va_arg(args, unsigned int);
-				count += printf("%u", num);
-			}
-			else if (*format == '%')
-			{
-				count += printf("%%");
-			}
 		}
 		else
 		{
