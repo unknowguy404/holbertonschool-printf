@@ -54,26 +54,10 @@ int _printf(const char *format, ...)
 				unsigned int hex_num = va_arg(args, int);
 				count += printf("%x", hex_num);
 			}
-<<<<<<< HEAD
 			else if (*format == 'u')
 			{
 				unsigned int unsigned_num = va_arg(args, int);
 				count += printf("%u", unsigned_num);
-=======
-			else if (*format == 'p')
-			{
-				void *ptr = va_arg(args, void *);
-				count += printf("%p", ptr);
-			}
-			else if (*format == 'u')
-			{
-				unsigned int num = va_arg(args, unsigned int);
-				count += printf("%u", num);
-			}
-			else if (*format == 'r')
-			{
-				count += printf("%%%r");
->>>>>>> 921d7b11ccff57eef00e6f0dc77c3d7c31d411a3
 			}
 		}
 		else
