@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 
 				putchar('%');
 				putchar(*format);
-				count++;
+				count += 2;
 			}
 		}
 		else
