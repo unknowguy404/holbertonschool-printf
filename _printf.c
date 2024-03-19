@@ -1,4 +1,7 @@
 #include "main.h"
+/**
+ *
+ */
 
 int _printf(const char *format, ...)
 {
@@ -12,6 +15,12 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			{
+				putchar('%');
+				count++;
+				break;
+			}
 			if (*format == 'c')
 			{
 				int c = va_arg(args, int);
@@ -67,10 +76,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-
 				putchar('%');
-				putchar(*format);
-				count += 2;
+				count++;
 			}
 		}
 		else
