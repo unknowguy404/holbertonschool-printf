@@ -65,6 +65,12 @@ int _printf(const char *format, ...)
 				unsigned int unsigned_num = va_arg(args, int);
 				count += printf("%u", unsigned_num);
 			}
+			else
+			{
+				putchar('%');
+				putchar(*format);
+				count++;
+			}
 		}
 		else
 		{
