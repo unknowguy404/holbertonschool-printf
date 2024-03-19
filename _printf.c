@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 				unsigned int octal_num = va_arg(args, int);
 				count += printf("%o", octal_num);
 			}
-			else if (*format == 'x')
+			else if (*format == 'x' || *format == 'X')
 			{
 				unsigned int hex_num = va_arg(args, int);
 				count += printf("%x", hex_num);
