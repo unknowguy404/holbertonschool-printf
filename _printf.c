@@ -21,11 +21,18 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				char *str = va_arg(args, char *);
-				while (*str)
+				if (str == NULL)
 				{
-					putchar(*str);
-					str++;
-					count++;
+					count += printf("(null)");
+				}
+				else
+				{
+					while (*str)
+					{
+						putchar(*str);
+						str++;
+						count++;
+					}
 				}
 			}
 			else if (*format == '%')
@@ -46,6 +53,11 @@ int _printf(const char *format, ...)
 			{
 				unsigned int hex_num = va_arg(args, int);
 				count += printf("%x", hex_num);
+			}
+			else if (*format == 'u')
+			{
+				unsigned int unsigned_num = va_arg(args, int);
+				count += printf("%u", unsigned_num);
 			}
 		}
 		else
