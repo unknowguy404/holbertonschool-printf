@@ -18,6 +18,11 @@ int _printf(const char *format, ...)
 				count++;
 				break;
 			}
+			else if (*format == '%')
+			{
+				putchar('%');
+				count++;
+			}
 			else if (*format == 'c')
 			{
 				int c = va_arg(args, int);
@@ -40,11 +45,6 @@ int _printf(const char *format, ...)
 						count++;
 					}
 				}
-			}
-			else if (*format == '%')
-			{
-				putchar('%');
-				count++;
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
@@ -75,7 +75,7 @@ int _printf(const char *format, ...)
 			{
 				putchar('%');
 				putchar(*format);
-				count += 1;
+				count += 2;
 			}
 		}
 		else
