@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 
 int _printf(const char *format, ...)
 {
@@ -13,10 +12,11 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '%')
+			if (*format == '\0')
 			{
-				putchar('%'); // Imprime un solo '%' si se encuentra '%%'
+				putchar('%');
 				count++;
+				break;
 			}
 			else if (*format == 'c')
 			{
@@ -40,6 +40,11 @@ int _printf(const char *format, ...)
 						count++;
 					}
 				}
+			}
+			else if (*format == '%')
+			{
+				putchar('%');
+				count++;
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
@@ -66,7 +71,12 @@ int _printf(const char *format, ...)
 				unsigned int unsigned_num = va_arg(args, int);
 				count += printf("%u", unsigned_num);
 			}
-			// Puedes agregar más casos para otros especificadores de formato si es necesario
+			else
+			{
+				putchar('%');
+				putchar(*format);
+				count += 1;
+			}
 		}
 		else
 		{
