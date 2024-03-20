@@ -13,11 +13,10 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == '%')
 			{
-				putchar('%');
+				putchar('%'); // Imprime un solo '%' si se encuentra '%%'
 				count++;
-				break;
 			}
 			else if (*format == 'c')
 			{
@@ -67,12 +66,7 @@ int _printf(const char *format, ...)
 				unsigned int unsigned_num = va_arg(args, int);
 				count += printf("%u", unsigned_num);
 			}
-			else
-			{
-				putchar('%');
-				putchar(*format);
-				count += 1;
-			}
+			// Puedes agregar más casos para otros especificadores de formato si es necesario
 		}
 		else
 		{
