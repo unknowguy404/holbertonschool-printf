@@ -1,7 +1,6 @@
 #include "main.h"
-/**
- *
- */
+#include <stdio.h>
+#include <stdarg.h>
 
 int _printf(const char *format, ...)
 {
@@ -15,25 +14,25 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == '\0') // Verifica si el siguiente carácter es nulo
 			{
 				putchar('%');
 				count++;
-				break;
+				break; // Sale del bucle para evitar seguir procesando el formato
 			}
-			else if (*format == '!')
+			else if (*format == '!') // Nuevo caso para '%!'
 			{
 				putchar('%');
 				putchar('!');
 				count += 2;
 			}
-			else if (*format == 'K')
+			else if (*format == 'K') // Nuevo caso para '%K'
 			{
 				putchar('%');
 				putchar('K');
 				count += 2;
 			}
-			if (*format == 'c')
+			else if (*format == 'c')
 			{
 				int c = va_arg(args, int);
 				putchar(c);
@@ -56,41 +55,7 @@ int _printf(const char *format, ...)
 					}
 				}
 			}
-			else if (*format == '%')
-			{
-				putchar('%');
-				count++;
-			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				int num = va_arg(args, int);
-				count += printf("%d", num);
-			}
-			else if (*format == 'o')
-			{
-				unsigned int octal_num = va_arg(args, int);
-				count += printf("%o", octal_num);
-			}
-			else if (*format == 'p')
-			{
-				void *ptr = va_arg(args, void *);
-				count += printf("%p", ptr);
-			}
-			else if (*format == 'x' || *format == 'X')
-			{
-				unsigned int hex_num = va_arg(args, int);
-				count += printf("%x", hex_num);
-			}
-			else if (*format == 'u')
-			{
-				unsigned int unsigned_num = va_arg(args, int);
-				count += printf("%u", unsigned_num);
-			}
-			else
-			{
-				putchar('%');
-				count++;
-			}
+			// Agregar casos para otros tipos de formato según sea necesario
 		}
 		else
 		{
