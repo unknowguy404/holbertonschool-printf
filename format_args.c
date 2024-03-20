@@ -9,7 +9,12 @@ int format_args(const char *format, va_list args)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == '%')
+			{
+				putchar('%');
+				count++;
+			}
+			else if (*format == '\0')
 			{
 				putchar('%');
 				count++;
