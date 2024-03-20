@@ -19,6 +19,7 @@ int format_args(const char *format, va_list args)
 			{
 				putchar('%');
 				count++;
+				format++; // Avanzar solo una vez aquí
 			}
 			else
 			{
@@ -33,5 +34,5 @@ int format_args(const char *format, va_list args)
 		format++;
 	}
 
-	return (count);
+	return count;
 }
