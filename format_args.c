@@ -2,8 +2,8 @@
 
 int format_args(const char *format, va_list args)
 {
-	int count = 0;
-
+	int count;
+	count = 0;
 	while (*format)
 	{
 		if (*format == '%')
@@ -19,7 +19,6 @@ int format_args(const char *format, va_list args)
 			{
 				putchar('%');
 				count++;
-				format++;
 			}
 			else
 			{
