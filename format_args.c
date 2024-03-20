@@ -33,5 +33,5 @@ int format_args(const char *format, va_list args)
 		format++;
 	}
 
-	return count;
+	return (count);
 }

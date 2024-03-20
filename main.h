@@ -7,6 +7,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+
 int format_args(const char *format, va_list args);
 int process_format(char format, va_list args);
 int process_char(va_list args);
