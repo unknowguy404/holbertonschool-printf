@@ -17,4 +17,5 @@ int process_octal(va_list args);
 int process_pointer(va_list args);
 int process_hexadecimal(va_list args);
 int process_unsigned(va_list args);
+int process_percent(void);
 #endif /** MAIN_H*/
