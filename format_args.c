@@ -3,23 +3,26 @@
 int format_args(const char *format, va_list args)
 {
 	int count = 0;
-	(void)args;
 
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0' || *format != '%')
+			if (*format == '\0')
 			{
 				putchar('%');
 				count++;
+				break;
 			}
 			else if (*format == '%')
 			{
 				putchar('%');
 				count++;
-				format++;
+			}
+			else
+			{
+				count += process_format(*format, args);
 			}
 		}
 		else
@@ -30,5 +33,5 @@ int format_args(const char *format, va_list args)
 		format++;
 	}
 
-	return count;
+	return (count);
 }
