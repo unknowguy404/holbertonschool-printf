@@ -19,7 +19,6 @@ int format_args(const char *format, va_list args)
 			{
 				putchar('%');
 				count++;
-				format++;
 			}
 			else
 			{
