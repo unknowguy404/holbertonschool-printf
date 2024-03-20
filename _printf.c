@@ -17,7 +17,21 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 			{
+				putchar('%');
+				count++;
 				break;
+			}
+			else if (*format == '!')
+			{
+				putchar('%');
+				putchar('!');
+				count += 2;
+			}
+			else if (*format == 'K')
+			{
+				putchar('%');
+				putchar('K');
+				count += 2;
 			}
 			if (*format == 'c')
 			{
