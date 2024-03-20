@@ -34,5 +34,10 @@ int format_args(const char *format, va_list args)
 		format++;
 	}
 
+	if (count > 0 && format[-1] == '%')
+	{
+		count--;
+	}
+
 	return count;
 }
