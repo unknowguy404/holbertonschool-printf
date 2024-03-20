@@ -15,7 +15,7 @@ int format_args(const char *format, va_list args)
 				count++;
 				break;
 			}
-			else if (*format == '%')
+			else if (*format == '%' && count == 1)
 			{
 				putchar('%');
 				count++;
