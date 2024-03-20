@@ -19,7 +19,7 @@ int format_args(const char *format, va_list args)
 			{
 				putchar('%');
 				count++;
-				format++; // Avanzar solo una vez aquí
+				format++;
 			}
 			else
 			{
