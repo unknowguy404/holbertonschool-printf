@@ -7,7 +7,7 @@ int format_args(const char *format, va_list args)
 
 	while (*format)
 	{
-		if ((*format + 1) == '%')
+		if (*format == '%')
 		{
 			format++;
 			if (*format == '\0' || *format != '%')
