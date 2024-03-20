@@ -34,8 +34,19 @@ int process_format(char format, va_list args)
 	}
 	else if (format == '%')
 	{
-		putchar('%');
-		count++;
+
+		char next_char = *va_arg(args, char *);
+		if (next_char == '%')
+		{
+			putchar('%');
+			count++;
+		}
+		else
+		{
+			putchar('%');
+			putchar(next_char);
+			count += 2;
+		}
 	}
 	else
 	{
