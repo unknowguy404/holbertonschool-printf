@@ -34,7 +34,7 @@ int process_format(char format, va_list args)
 	}
 	else if (format == '%')
 	{
-		count += process_percent();
+		count += process_percent(args);
 	}
 	else
 	{
