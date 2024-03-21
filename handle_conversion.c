@@ -1,7 +1,7 @@
 #include "main.h"
 int handle_conversion(char specifier, va_list args)
 {
-	int printed_chars = 0;
+	unsigned int printed_chars = 0;
 
 	switch (specifier)
 	{
@@ -32,14 +32,11 @@ int handle_conversion(char specifier, va_list args)
 	case 'u':
 		printed_chars += process_unsigned(args);
 		break;
-	}
-	if (specifier != 'c' && specifier != 's' && specifier != '%' &&
-		specifier != 'd' && specifier != 'i' && specifier != 'o' &&
-		specifier != 'p' && specifier != 'x' && specifier != 'u')
-	{
+	default:
 		putchar('%');
 		putchar(specifier);
 		printed_chars += 2;
+		break;
 	}
 
 	return (printed_chars);
