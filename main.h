@@ -1,12 +1,14 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
 
 int _printf(const char *format, ...);
+int _putchar(char c);
 
 int format_args(const char *format, va_list args);
 int process_format(char format, va_list args);
@@ -17,5 +19,5 @@ int process_octal(va_list args);
 int process_pointer(va_list args);
 int process_hexadecimal(va_list args);
 int process_unsigned(va_list args);
-int process_percent(va_list args);
+int process_percent(void);
 #endif /** MAIN_H*/

@@ -1,7 +1,8 @@
 #include "main.h"
 
-int process_percent(va_list args)
+int process_percent(void)
+
 {
-	(void)args;
-	return (write(1, "%", 1));
+	_putchar('%');
+	return 1;
 }
