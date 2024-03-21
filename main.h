@@ -8,7 +8,6 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
 
 int format_args(const char *format, va_list args);
 int process_format(char format, va_list args);

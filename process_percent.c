@@ -3,6 +3,6 @@
 int process_percent(void)
 
 {
-	_putchar('%');
+	putchar('%');
 	return 1;
 }
