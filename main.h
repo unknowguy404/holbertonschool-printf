@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
-#define INT_MAX 2147483647
 
 int _printf(const char *format, ...);
 
