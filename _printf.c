@@ -8,19 +8,16 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	// Movemos la declaración de ptr al principio del bloque
-
-	// Recorremos la cadena de formato
 	for (ptr = format; *ptr != '\0'; ptr++)
 	{
 		if (*ptr == '%')
 		{
-			putchar('%'); // Imprimimos un '%' en la consola
+			putchar('%');
 			printed_chars++;
 		}
 		else
 		{
-			putchar(*ptr); // Imprimimos el carácter actual en la consola
+			putchar(*ptr);
 			printed_chars++;
 		}
 	}
