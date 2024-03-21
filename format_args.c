@@ -2,8 +2,8 @@
 
 int format_args(const char *format, va_list args)
 {
-	int count;
-	count = 0;
+	int count = 0;
+
 	while (*format)
 	{
 		if (*format == '%')
@@ -19,18 +19,6 @@ int format_args(const char *format, va_list args)
 			{
 				putchar('%');
 				count++;
-			}
-			else if (*format == '!' && *(format + 1) == '\0')
-			{
-				putchar('!');
-				count = -1;
-				break;
-			}
-			else if (*format == 'K' && *(format + 1) == '\0')
-			{
-				putchar('K');
-				count = -1;
-				break;
 			}
 			else
 			{
@@ -50,5 +38,5 @@ int format_args(const char *format, va_list args)
 		count--;
 	}
 
-	return count;
+	return (count);
 }
