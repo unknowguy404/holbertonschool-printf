@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * parse_format - Parse a format string and print the formatted output.
+ * @format: The format string to parse.
+ * @args: The list of arguments for the format string.
+ *
+ * Return: The number of characters printed.
+ */
 int parse_format(const char *format, va_list args)
 {
 	int printed_chars = 0;
@@ -31,5 +38,5 @@ int parse_format(const char *format, va_list args)
 
 	va_end(args);
 
-	return printed_chars;
+	return (printed_chars);
 }
