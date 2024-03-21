@@ -9,6 +9,9 @@
 
 int _printf(const char *format, ...);
 
+int parse_format(const char *format, va_list args);
+int handle_conversion(char specifier, va_list args);
+int print_string(char *str);
 int format_args(const char *format, va_list args);
 int process_format(char format, va_list args);
 int process_char(va_list args);

@@ -2,12 +2,12 @@
 
 int _printf(const char *format, ...)
 {
+	int printed_chars = 0;
 	va_list args;
-	int count = 0;
 
 	va_start(args, format);
-	count = format_args(format, args);
+	printed_chars = parse_format(format, args);
 	va_end(args);
 
-	return count;
+	return (printed_chars);
 }
