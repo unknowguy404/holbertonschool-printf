@@ -1,67 +1,23 @@
 #include "main.h"
 
+/**
+ * _printf - Main printf function
+ * @format: Format string
+ *
+ * Return: Number of characters printed
+ */
 int _printf(const char *format, ...)
 {
-    va_list args;
-    unsigned int count = 0;
+	va_list args;
+	int count = 0;
 
-    va_start(args, format);
+	va_start(args, format);
 
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            format++;
-            if (*format == '\0')
-            {
-                putchar('%');
-                count++;
-                break;
-            }
-            else if (*format == 'c')
-            {
-                int c = va_arg(args, int);
-                putchar(c);
-                count++;
-            }
-            else if (*format == 's')
-            {
-                char *str = va_arg(args, char *);
-                if (str == NULL)
-                {
-                    count += printf("(null)");
-                }
-                else
-                {
-                    while (*str)
-                    {
-                        putchar(*str);
-                        str++;
-                        count++;
-                    }
-                }
-            }
-            else if (*format == '%')
-            {
-                putchar('%');
-                count++;
-            }
-            else
-            {
-                putchar('%');
-                putchar(*format);
-                count += 2;
-            }
-        }
-        else
-        {
-            putchar(*format);
-            count++;
-        }
-        format++;
-    }
+	count += print_chr(format, args);
+	count += formspecs(format, args);
+	count += print_str(format, args);
 
-    va_end(args);
-    return count;
+	va_end(args);
+
+	return (count);
 }
-
