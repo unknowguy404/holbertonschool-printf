@@ -29,6 +29,9 @@ int handle_conversion(char specifier, va_list args)
 	case 'x':
 		printed_chars += process_hexadecimal(args);
 		break;
+	case 'X':
+		printed_chars += process_hexadecimal(args);
+		break;
 	case 'u':
 		printed_chars += process_unsigned(args);
 		break;
