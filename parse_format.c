@@ -1,11 +1,5 @@
 #include "main.h"
-/**
- * parse_format - parses the format string
- * @format: format string
- * @args: arguments list
- *
- * Return: number of printed characters
- */
+
 int parse_format(const char *format, va_list args)
 {
 	int printed_chars = 0;
@@ -13,7 +7,12 @@ int parse_format(const char *format, va_list args)
 
 	while (*ptr)
 	{
-		if (*ptr == '%')
+		if (*ptr != '%')
+		{
+			putchar(*ptr);
+			printed_chars++;
+		}
+		else
 		{
 			if (*(ptr + 1) == '%')
 			{
