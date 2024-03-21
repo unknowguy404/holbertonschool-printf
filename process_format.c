@@ -32,25 +32,9 @@ int process_format(char format, va_list args)
 	{
 		count += process_unsigned(args);
 	}
-	else if (format == '%')
-	{
-
-		char next_char = *va_arg(args, char *);
-		if (next_char == '%')
-		{
-			putchar('%');
-			count++;
-		}
-		else
-		{
-			putchar('%');
-			putchar(next_char);
-			count += 2;
-		}
-	}
 	else
 	{
-		putchar('%');
+
 		putchar(format);
 		count += 2;
 	}
