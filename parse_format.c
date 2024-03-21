@@ -14,10 +14,11 @@ int parse_format(const char *format, va_list args)
 		}
 		else
 		{
-			if (*(ptr + 1) == '\0')
+			if (*(ptr + 1) == '%')
 			{
 				putchar('%');
 				printed_chars++;
+				ptr++;
 			}
 			else
 			{
@@ -27,6 +28,8 @@ int parse_format(const char *format, va_list args)
 		}
 		ptr++;
 	}
+
+	va_end(args);
 
 	return printed_chars;
 }
