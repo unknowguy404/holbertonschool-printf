@@ -1,0 +1,87 @@
+.TH _PRINTF 3 "March 2024"
+			  "User Commands"
+
+				  .SH NAME
+					  _printf \-
+	custom printf function
+
+		.SH SYNOPSIS
+		.B #include "main.h"
+		.PP int
+		.B
+		handle_conversion(char specifier, va_list args);
+
+int
+	.B
+	parse_format(const char *format, va_list args);
+
+int
+	.B
+	print_string(char *str);
+
+int
+	.B
+	process_decimal(va_list args);
+
+int
+	.B
+	process_octal(va_list args);
+
+int
+	.B
+	process_pointer(va_list args);
+
+int
+	.B
+	process_hexadecimal(va_list args);
+
+int
+	.B
+	process_unsigned(va_list args);
+
+.SH DESCRIPTION
+		The
+			.B handle_conversion
+				function handles individual format specifiers in a custom printf -
+	like function.
+
+	The
+		.B parse_format
+			function parses a format string and prints the formatted output.
+
+	The
+		.B print_string
+			function prints a string.
+
+	The
+		.B process_decimal
+			function processes and prints decimal integers.
+
+	The
+		.B process_octal
+			function processes and prints octal integers.
+
+	The
+		.B process_pointer
+			function processes and prints pointers.
+
+	The
+		.B process_hexadecimal
+			function processes and prints hexadecimal integers.
+
+	The
+		.B process_unsigned
+			function processes and prints unsigned integers.
+
+		.SH RETURN VALUE
+			The functions return the number of characters printed.
+
+		.SH SEE ALSO
+		.BR printf(1)
+
+		.SH BUGS
+			function compile correctly but thosen pass chequer _printf("%");
+.
+
+	.SH AUTHOR
+		User Thais Rodriguez Nelson Betancourt
