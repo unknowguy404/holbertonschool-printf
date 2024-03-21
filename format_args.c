@@ -20,6 +20,18 @@ int format_args(const char *format, va_list args)
 				putchar('%');
 				count++;
 			}
+			else if (*format == '!' && *(format + 1) == '\0')
+			{
+				putchar('!');
+				count = -1;
+				break;
+			}
+			else if (*format == 'K' && *(format + 1) == '\0')
+			{
+				putchar('K');
+				count = -1;
+				break;
+			}
 			else
 			{
 				count += process_format(*format, args);
