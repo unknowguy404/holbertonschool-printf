@@ -32,9 +32,13 @@ int process_format(char format, va_list args)
 	{
 		count += process_unsigned(args);
 	}
+	else if (format == '%')
+	{
+		count += process_percent();
+	}
 	else
 	{
-
+		putchar('%');
 		putchar(format);
 		count += 2;
 	}
