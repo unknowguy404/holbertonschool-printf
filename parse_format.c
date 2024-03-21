@@ -14,14 +14,19 @@ int parse_format(const char *format, va_list args)
 		}
 		else
 		{
-			ptr++;
-			if (*ptr != '\0')
+			if (*(ptr + 1) == '\0')
 			{
-				printed_chars += handle_conversion(*ptr, args);
+				putchar('%');
+				printed_chars++;
+			}
+			else
+			{
+				printed_chars += handle_conversion(*(ptr + 1), args);
+				ptr++; // Avanzamos el puntero adicionalmente para saltar el formato
 			}
 		}
 		ptr++;
 	}
 
-	return (printed_chars);
+	return printed_chars;
 }
