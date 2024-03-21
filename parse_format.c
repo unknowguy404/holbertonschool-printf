@@ -22,7 +22,7 @@ int parse_format(const char *format, va_list args)
 			else
 			{
 				printed_chars += handle_conversion(*(ptr + 1), args);
-				ptr++; // Avanzamos el puntero adicionalmente para saltar el formato
+				ptr++;
 			}
 		}
 		ptr++;
