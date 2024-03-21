@@ -15,7 +15,10 @@ int parse_format(const char *format, va_list args)
 		else
 		{
 			ptr++;
-			printed_chars += handle_conversion(*ptr, args);
+			if (*ptr != '\0')
+			{
+				printed_chars += handle_conversion(*ptr, args);
+			}
 		}
 		ptr++;
 	}
