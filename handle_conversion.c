@@ -13,7 +13,7 @@ int handle_conversion(char specifier, va_list args)
 		printed_chars += print_string(va_arg(args, char *));
 		break;
 	case '%':
-		putchar('\%');
+		putchar('%');
 		printed_chars++;
 		break;
 	case 'd':
