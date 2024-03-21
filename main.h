@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+#define va_arg(ap, type) __builtin_va_arg(ap, type)
 
 int _printf(const char *format, ...);
 
@@ -23,4 +24,5 @@ int process_hexadecimal(va_list args);
 int process_unsigned(va_list args);
 int process_percent(void);
 void process_special(const char **format, va_list args);
+void percent_print(va_list args);
 #endif /** MAIN_H*/
