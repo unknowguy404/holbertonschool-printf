@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include "main.h"
+
 int print_string(char *str)
 {
 	int printed_chars = 0;
