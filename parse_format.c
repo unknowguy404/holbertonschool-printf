@@ -29,14 +29,16 @@ int parse_format(const char *format, va_list args)
 			}
 			else
 			{
+				if (*(ptr + 1) == '\0')
+				{
+					return (-1);
+				}
 				printed_chars += handle_conversion(*(ptr + 1), args);
 				ptr++;
 			}
 		}
 		ptr++;
 	}
-
 	va_end(args);
-
 	return (printed_chars);
 }

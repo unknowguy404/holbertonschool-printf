@@ -1,0 +1,81 @@
+.TH _printf "21 March 2024"
+			"Version 1.0"
+			"User Commands"
+
+				.SH NAME
+					_printf \-
+	custom printf function
+
+		.SH SYNOPSIS
+		.B #include<main.h>
+		.sp
+		.I int
+		handle_conversion(char specifier, va_list args);
+.sp
+	.I int
+	parse_format(const char *format, va_list args);
+.sp
+	.I int
+	print_string(char *str);
+.sp
+	.I int
+	process_decimal(va_list args);
+.sp
+	.I int
+	process_octal(va_list args);
+.sp
+	.I int
+	process_pointer(va_list args);
+.sp
+	.I int
+	process_hexadecimal(va_list args);
+.sp
+	.I int
+	process_unsigned(va_list args);
+
+.SH DESCRIPTION
+The
+.B _printf
+functions are custom implementations of the standard
+.B printf
+function in C, providing support for additional conversion specifiers.
+
+.SH RETURN VALUE
+The
+.B _printf
+functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+
+.SH AUTHOR
+Written by Thais Rodriguez & Nelson Betancourt.
+
+
+.SH COPYRIGHT
+Copyright \(co 2024 Thais Rodriguez & Nelson Betancourt.
+
+.SH LICENSE
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+.SH EXAMPLES
+.TP
+.B #include <stdio.h>
+.br
+.B #include "main.h"
+.br
+.br
+.B int main(void)
+.br
+.B {
+	.br
+		.B \ _printf("Hello, %s!\n", "world");
+	.br
+		.B \ return (0);
+	.br
+		.B }
+
+.SH NOTES
+This manual page was written for the holberton-printf project.
+
+.SH BUGS
+function compile very well, but using printf("%") have some difficult .

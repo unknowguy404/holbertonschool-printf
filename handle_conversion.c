@@ -1,5 +1,12 @@
 #include "main.h"
-int handle_conversion(char specifier, va_list args)
+/**
+ * handle_conversion - Handles conversion specifiers in a format string.
+ * @specifier: The conversion specifier character.
+ * @args: The list of arguments for the format string.
+ *
+ * Return: The number of characters printed.
+ */
+unsigned int handle_conversion(char specifier, va_list args)
 {
 	unsigned int printed_chars = 0;
 
@@ -14,7 +21,6 @@ int handle_conversion(char specifier, va_list args)
 		break;
 	case '%':
 		putchar('%');
-		printed_chars++;
 		break;
 	case 'd':
 	case 'i':
@@ -33,7 +39,7 @@ int handle_conversion(char specifier, va_list args)
 		printed_chars += process_hexadecimal(args);
 		break;
 	case 'u':
-		printed_chars += process_unsigned(args);
+		printed_chars += manejar_entero_sin_signo(args);
 		break;
 	default:
 		putchar('%');
@@ -41,6 +47,5 @@ int handle_conversion(char specifier, va_list args)
 		printed_chars += 2;
 		break;
 	}
-
 	return (printed_chars);
 }
