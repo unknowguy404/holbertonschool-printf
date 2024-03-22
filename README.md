@@ -4,11 +4,11 @@
 
 ## Description
 
-This project implements a custom version of the `printf` function in C. The `_printf` function takes a format string and a variable number of arguments, similar to the standard `printf`, and prints the formatted output to the standard output.
+This project use a custom version of the `printf` function in C. The `_printf` function takes a format string and a variable number of arguments, similar to the standard `printf`, and prints the formatted output to the standard output.
 
 ## Usage
 
-To use the `_printf` function, include the `main.h` header file in your C program and call `_printf` with a format string and any additional arguments as needed. For example:
+To use the `_printf` function, include the `main.h` header file in your C program and call `_printf` with a format string and any additional arguments as needed. here's an example:
 
 ```c
 #include "main.h"
