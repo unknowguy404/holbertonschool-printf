@@ -53,7 +53,7 @@ int process_hexadecimal(va_list args)
  *
  * Return: The number of characters printed.
  */
-int process_unsigned(va_list args)
+int manejar_entero_sin_signo(va_list args)
 {
 	unsigned int unsigned_num = va_arg(args, unsigned int);
 
