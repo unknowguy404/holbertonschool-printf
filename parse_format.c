@@ -9,8 +9,11 @@
  */
 int parse_format(const char *format, va_list args)
 {
-	int printed_chars = 0;
 	const char *ptr = format;
+	int printed_chars = 0;
+
+	if (format == NULL)
+		return (-1);
 
 	while (*ptr)
 	{
@@ -35,8 +38,5 @@ int parse_format(const char *format, va_list args)
 		}
 		ptr++;
 	}
-
-	va_end(args);
-
-	return (printed_chars);
+	return (printed_ichars);
 }
