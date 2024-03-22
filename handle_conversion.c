@@ -39,7 +39,7 @@ unsigned int handle_conversion(char specifier, va_list args)
 		printed_chars += process_hexadecimal(args);
 		break;
 	case 'u':
-		printed_chars += process_unsigned(args);
+		printed_chars += process_unsignedint(args);
 		break;
 	default:
 		putchar('%');
