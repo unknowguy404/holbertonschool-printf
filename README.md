@@ -24,7 +24,7 @@ int main(void)
 
 ```
 
-Supported Conversion Specifiers
+## Supported Conversion Specifiers
 %c: Character
 %s: String
 %%: Percent sign
@@ -33,8 +33,9 @@ Supported Conversion Specifiers
 %p: Pointer
 %x, %X: Unsigned hexadecimal integer
 %u: Unsigned decimal integer
-Notes
+## Notes
 The function does not support all the features of the standard printf, such as width and precision specifiers.
 Some conversion specifiers may behave differently than in the standard printf, so it's recommended to test thoroughly before using in production code.
-Author
+
+## Author
 This project was developed by Thais Rodriguez and Nelson Betancourt for the Holberton School printf project.
