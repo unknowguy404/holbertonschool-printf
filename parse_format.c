@@ -38,5 +38,5 @@ int parse_format(const char *format, va_list args)
 		}
 		ptr++;
 	}
-	return (printed_ichars);
+	return (printed_chars);
 }
