@@ -48,7 +48,7 @@ int process_hexadecimal(va_list args)
 	return (printf("%x", hex_num));
 }
 /**
- * process_unsigned - Process an unsigned integer argument.
+ * manejar_entero_sin_signo- Process an unsigned integer argument.
  * @args: The argument list.
  *
  * Return: The number of characters printed.
